@@ -1,0 +1,8 @@
+app
+  render routinig app
+    load business module
+      routes
+        Main
+          Users
+          Products
+    load ErrorComponent

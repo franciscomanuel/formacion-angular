@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 interface Item {
   name: string;
@@ -13,6 +13,8 @@ interface Item {
   styleUrl: './sidenav.component.scss'
 })
 export class SidenavComponent {
+  @HostBinding('class') clasName = 'flex-container';
+
   protected readonly items: Item[] = [
     {
       name: "Users",

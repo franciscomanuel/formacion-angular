@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './components/products/products.component';
 import { UsersComponent } from './components/users/users.component';
-import { MainContentComponent } from '../core/components/main-content/main-content.component';
-import { HomeComponent } from '../core/components/home/home.component';
+import { LayoutComponent } from '../core/components/layout/layout.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MainContentComponent,
+    component: LayoutComponent,
     children: [
       {
         path: '',

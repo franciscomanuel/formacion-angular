@@ -1,3 +1,7 @@
-.full-height {
-  height: 700px;
+.sidenav {
+  width: fit-content !important;
+  padding: 0px 8px;
+  overflow: auto;
+  border-right: 1px solid var(--mat-sys-primary) !important;
+  border-radius: 0 !important;
 }

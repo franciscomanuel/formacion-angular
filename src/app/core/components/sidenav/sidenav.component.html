@@ -1,5 +1,5 @@
-<mat-sidenav-container class="full-height">
-  <mat-sidenav #snav mode="side" fixedTopGap="56" [opened]="true">
+<mat-sidenav-container class="flex-container">
+  <mat-sidenav #snav mode="side" [opened]="true" class="sidenav">
     <mat-nav-list>
       @for (item of items; track item.name) {
       <a mat-list-item [routerLink]="item.link">{{ item.name }}</a>
@@ -7,7 +7,7 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content>
+  <mat-sidenav-content class="main-layout-route">
     <router-outlet />
   </mat-sidenav-content>
 </mat-sidenav-container>

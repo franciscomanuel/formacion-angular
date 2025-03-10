@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-users',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './users.component.scss'
 })
 export class UsersComponent {
-
+  @HostBinding('class') className = 'flex-container main-page-content';
 }

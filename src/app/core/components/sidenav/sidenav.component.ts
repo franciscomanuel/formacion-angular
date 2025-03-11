@@ -1,10 +1,5 @@
-import { Component, HostBinding } from '@angular/core';
-
-interface Item {
-  name: string;
-  link: string;
-  isActive?: boolean;
-}
+import { Component, HostBinding, Input } from '@angular/core';
+import { Item } from '../../models/item.interfaces';
 
 @Component({
   selector: 'app-sidenav',
@@ -15,22 +10,5 @@ interface Item {
 export class SidenavComponent {
   @HostBinding('class') clasName = 'flex-container';
 
-  protected readonly items: Item[] = [
-    {
-      name: "Users",
-      link: "/users"
-    },
-    {
-      name: "Products",
-      link: "/products"
-    },
-    {
-      name: "Staffs",
-      link: "/shops/staffs"
-    },
-    {
-      name: "Schedules",
-      link: "/shops/schedules"
-    }
-  ];
+  @Input({required: true}) items!: Item[];
 }

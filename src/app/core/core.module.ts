@@ -31,6 +31,6 @@ import { FooterComponent } from './components/footer/footer.component';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-  ],
+  ]
 })
 export class CoreModule {}

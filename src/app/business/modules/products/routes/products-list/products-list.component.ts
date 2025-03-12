@@ -1,8 +1,16 @@
-import { AfterViewInit, Component, HostBinding, inject, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  HostBinding,
+  inject,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { ProductService } from '../../services/product/product.service';
 import { Product } from '../../models/product.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-products',
@@ -14,23 +22,25 @@ export class ProductsListComponent implements OnInit, AfterViewInit {
   @HostBinding('class') className = 'flex-container main-page-content';
 
   @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   private readonly _productService = inject(ProductService);
 
   dataSource: MatTableDataSource<Product> = new MatTableDataSource();
-  displayedColumns = ["name", "price", "amount", "stars"];
+  displayedColumns = ['name', 'price', 'amount', 'stars'];
   product = {
-    "name": "Nombre",
-    "price": 7,
-    "amount": 9
-  }
+    name: 'Nombre',
+    price: 7,
+    amount: 9,
+  };
 
   ngOnInit(): void {
     this.getProducts();
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   applyFilter(event: Event) {
@@ -43,8 +53,6 @@ export class ProductsListComponent implements OnInit, AfterViewInit {
   }
 
   private getProducts() {
-    this._productService
-      .getAll()
-      .subscribe((products: Product[]) => (this.dataSource.data = products));
+    this._productService.getAll().subscribe((products: Product[]) => this.dataSource.data = products);
   }
 }

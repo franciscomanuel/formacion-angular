@@ -18,7 +18,12 @@ export class ProductsListComponent implements OnInit, AfterViewInit {
   private readonly _productService = inject(ProductService);
 
   dataSource: MatTableDataSource<Product> = new MatTableDataSource();
-  displayedColumns = ["name", "price", "amount"];
+  displayedColumns = ["name", "price", "amount", "stars"];
+  product = {
+    "name": "Nombre",
+    "price": 7,
+    "amount": 9
+  }
 
   ngOnInit(): void {
     this.getProducts();

@@ -7,12 +7,20 @@ const PRODUCTS_LIST: Product[] = [
   {
     name: "Product 1",
     price: 5,
-    amount: 2
+    amount: 2,
+    specification: {
+      stars: 3,
+      votes: 100
+    }
   },
   {
     name: "Product 2",
     price: 8,
-    amount: 5
+    amount: 5,
+    specification: {
+      stars: 4,
+      votes: 1000
+    }
   }
 ]
 

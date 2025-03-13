@@ -33,4 +33,10 @@ export class ProductService {
   getAll(): Observable<Product[]> {
     return of(PRODUCTS_LIST);
   }
+
+  test(): Observable<unknown> {
+    const url = "https://pokeapi.co/api/v2/pokemon/ditto";
+
+    return this._httpClient.get(url);
+  } 
 }

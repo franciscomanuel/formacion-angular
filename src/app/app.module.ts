@@ -5,13 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {
   provideHttpClient,
+  withFetch,
+  withInterceptors,
   withInterceptorsFromDi,
 } from '@angular/common/http';
+import { httpRequestInterceptor } from './core/interceptors/http-request/http-request.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [provideHttpClient(withInterceptorsFromDi())],
+  providers: [
+    provideHttpClient(
+      withInterceptorsFromDi(),
+      withFetch(),
+      withInterceptors([httpRequestInterceptor])
+    ),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

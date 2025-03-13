@@ -29,6 +29,8 @@ export class ProductsListComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.getProducts();
+
+    this._productService.test().subscribe();
   }
 
   ngAfterViewInit(): void {

@@ -13,12 +13,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { StarsPipe } from './pipes/stars/stars.pipe';
+import { ProductTableComponent } from './components/product-table/product-table.component';
 
 @NgModule({
   declarations: [
     ProductsListComponent,
     ProductDetailComponent,
     ProductFormComponent,
+    ProductTableComponent,
     StarsPipe
   ],
   imports: [

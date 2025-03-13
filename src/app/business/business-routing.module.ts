@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsersComponent } from './components/users/users.component';
 import { LayoutComponent } from '../core/components/layout/layout.component';
 import { HomeComponent } from './components/home/home.component';
 
@@ -15,7 +14,10 @@ const routes: Routes = [
       },
       {
         path: 'users',
-        component: UsersComponent,
+        loadChildren: () =>
+          import('./modules/users/users.module').then(
+            (module) => module.UsersModule
+          ),
       },
       {
         path: 'products',

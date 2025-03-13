@@ -1,0 +1,6 @@
+<div class="flex-container main-page-item mt-3">
+  <app-user-table
+    [dataSource]="dataSource"
+    (keyUpFilter)="applyFilter($event)"
+  ></app-user-table>
+</div>

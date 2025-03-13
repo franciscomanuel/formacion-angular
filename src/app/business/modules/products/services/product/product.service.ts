@@ -31,10 +31,6 @@ export class ProductService {
   private readonly _httpClient = inject(HttpClient);
 
   getAll(): Observable<Product[]> {
-    // const url = "https://pokeapi.co/api/v2/pokemon/ditto";
-
-    // return this._httpClient.get(url);
-
     return of(PRODUCTS_LIST);
   }
 }
